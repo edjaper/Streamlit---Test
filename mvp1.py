@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 import sklearn_json as skljson
 
-!pip install sklearn-json
+#!pip install sklearn-json
 
 #Loading up the Regression model we created
 model = Ridge()
