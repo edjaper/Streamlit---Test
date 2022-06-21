@@ -3,4 +3,3 @@ sklearn
 pandas
 numpy
 lime
-lime.lime_tabular
