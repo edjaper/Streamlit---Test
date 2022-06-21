@@ -3,4 +3,4 @@ sklearn
 pandas
 numpy
 lime
-lime_tabular
+lime.lime_tabular
