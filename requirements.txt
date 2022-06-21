@@ -1,3 +1,6 @@
 sklearn_json
 sklearn
 pandas
+numpy
+lime
+lime_tabular
