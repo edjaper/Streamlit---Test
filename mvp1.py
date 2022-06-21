@@ -4,7 +4,7 @@ import pandas as pd
 import sklearn_json as skljson
 
 
-#!pip install lime
+!pip install lime
 import lime
 import lime.lime_tabular
 import numpy as np
@@ -13,7 +13,7 @@ import numpy as np
 diamonds = pd.read_csv("diamonds.csv", sep=";", decimal=".")
 
 
-#!pip install sklearn-json
+!pip install sklearn-json
 
 #Loading up the Regression model we created
 model = Ridge()
