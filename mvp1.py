@@ -21,7 +21,7 @@ model = skljson.from_json('rr_model.json')
 
 
 
-estimator = fit_model
+estimator = model
 x_featurenames = diamonds.columns
 
 explainer1 = lime.lime_tabular.LimeTabularExplainer(np.array(diamonds),
