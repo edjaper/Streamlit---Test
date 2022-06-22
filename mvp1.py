@@ -102,7 +102,7 @@ if st.button('Show explanation'):
     st.pyplot(explanation.as_pyplot_figure())
     txt = st.text_area('Feedback')
     if st.button('Submit'):
-      st.session_state.feedback = st.session_state.feedback.append({'id': i, 'feedback': txt}, ignore_index=True)
+      st.session_state.feedback = st.session_state.feedback.append({"id": [i], "feedback": [txt]}, ignore_index=True)
 
       #element = st.dataframe(feedback)
       #data = [[i, txt]]
