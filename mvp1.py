@@ -94,24 +94,25 @@ n = st.number_input('Number of features:', min_value=2, max_value=8, value=2)
 
 i = st.number_input('Instance ID:', min_value=0, max_value=100, value=0)
 
-
+txt = ""
 if st.button('Show explanation'):
     explanation = explainer1.explain_instance(diamonds.iloc[i,:], estimator.predict, num_features=n)
     #price = predict(carat, cut, color, clarity, depth, table, x, y, z)
     #st.success(f'The predicted price of the diamond is ${price[0]:.2f} USD')
     st.pyplot(explanation.as_pyplot_figure())
     txt = st.text_area('Feedback')
-    if st.button('Submit'):
+    resp = st.button('Submit')
+    #if st.button('Submit'):
       #feedback = feedback.append({'id': i, 'feedback': txt}, ignore_index=True)
       #st.write(feedback)
       #st.session_state.feedback = st.session_state.feedback.append({"id": [i], "feedback": [txt]}, ignore_index=True)
       #st.dataframe(session_state.feedback)
 
-      element = st.dataframe(feedback)
-      data = [[i, txt]]
-      df = pd.DataFrame(data, columns=['id', 'feedback'])
-      element.add_rows(df)
-      st.write(df)
+      #element = st.dataframe(feedback)
+      #data = [[i, txt]]
+      #df = pd.DataFrame(data, columns=['id', 'feedback'])
+      #element.add_rows(df)
+      #st.write(df)
       #st.session_state['feedback'] = st.session_state['feedback'].append(data, ignore_index=True)
       #st.dataframe(st.session_state['feedback'])
       #feedback = feedback.append({'id': i, 'feedback': txt}, ignore_index=True)
@@ -120,5 +121,6 @@ if st.button('Show explanation'):
       #st.dataframe(st.session_state['feedback'])
       #st.dataframe(st.session_state.feedback)
       #st.write(feedback)
-      
-#st.write(feedback)
+
+if resp:
+  st.write(txt)
