@@ -104,8 +104,8 @@ if st.button('Show explanation'):
     if st.button('Submit'):
       feedback = feedback.append({'id': i, 'feedback': txt}, ignore_index=True)
       st.write(feedback)
-      st.session_state.feedback = st.session_state.feedback.append({"id": [i], "feedback": [txt]}, ignore_index=True)
-      st.dataframe(session_state.feedback)
+      #st.session_state.feedback = st.session_state.feedback.append({"id": [i], "feedback": [txt]}, ignore_index=True)
+      #st.dataframe(session_state.feedback)
 
       #element = st.dataframe(feedback)
       #data = [[i, txt]]
