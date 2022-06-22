@@ -104,4 +104,6 @@ if st.button('Show explanation'):
     txt = st.text_area('Feedback')
     if st.button('Submit'):
       element = st.dataframe(feedback)
-      element.add_rows(feedback)
+      data = [[i, txt]]
+      df = pd.DataFrame(data, columns=['id', 'feedback'])
+      element.add_rows(df)
