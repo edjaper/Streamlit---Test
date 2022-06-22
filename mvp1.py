@@ -12,6 +12,10 @@ import numpy as np
 diamonds = pd.read_csv("diamonds.csv", sep=";", decimal=".")
 feedback = pd.read_csv("feedback.csv", sep=";")
 
+
+if "feedback" not in st.session_state:
+    st.session_state['feedback'] = pd.DataFrame(columns=['id','feedback'])
+    
 #!pip install sklearn-json
 
 #Loading up the Regression model we created
@@ -35,9 +39,6 @@ explainer1 = lime.lime_tabular.LimeTabularExplainer(np.array(diamonds),
 @st.cache
 
 
-if "feedback" not in st.session_state:
-    st.session_state['feedback'] = pd.DataFrame(columns=['id','feedback'])
-    
 def onAddRow(a, b):
     data = {
             'id':a,
