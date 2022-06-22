@@ -53,16 +53,15 @@ n = st.number_input('Number of features:', min_value=2, max_value=8, value=2)
 
 i = st.number_input('Instance ID:', min_value=0, max_value=100, value=0)
 
-txt = ""
+
 if st.button('Show explanation'):
     explanation = explainer1.explain_instance(diamonds.iloc[i,:], estimator.predict, num_features=n)
     #price = predict(carat, cut, color, clarity, depth, table, x, y, z)
     #st.success(f'The predicted price of the diamond is ${price[0]:.2f} USD')
     st.pyplot(explanation.as_pyplot_figure())
     txt = st.text_area('Feedback')
-    resp = st.button('Submit')
-    if resp:
-      st.write(txt)
+    st.button("Submit", on_click = onAddRow(i, txt))
+    st.write(feedback)
     #if st.button('Submit'):
       #feedback = feedback.append({'id': i, 'feedback': txt}, ignore_index=True)
       #st.write(feedback)
