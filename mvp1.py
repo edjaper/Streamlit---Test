@@ -2,7 +2,6 @@ from sklearn.linear_model import Ridge
 import streamlit as st
 import pandas as pd
 import sklearn_json as skljson
-import SessionState
 
 #!pip install lime
 import lime
@@ -103,7 +102,7 @@ if st.button('Show explanation'):
     st.pyplot(explanation.as_pyplot_figure())
     txt = st.text_area('Feedback')
     if st.button('Submit'):
-      session_state.feedback = session_state.feedback.append({'id': i, 'feedback': txt}, ignore_index=True)
+      st.session_state.feedback = st.session_state.feedback.append({'id': i, 'feedback': txt}, ignore_index=True)
 
       #element = st.dataframe(feedback)
       #data = [[i, txt]]
