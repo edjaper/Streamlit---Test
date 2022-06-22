@@ -2,7 +2,7 @@ from sklearn.linear_model import Ridge
 import streamlit as st
 import pandas as pd
 import sklearn_json as skljson
-from gsheetsdb import connect
+import SessionState
 
 #!pip install lime
 import lime
@@ -103,21 +103,16 @@ if st.button('Show explanation'):
     st.pyplot(explanation.as_pyplot_figure())
     txt = st.text_area('Feedback')
     if st.button('Submit'):
-      conn = connect()
-      sheet_url = st.secrets["https://docs.google.com/spreadsheets/d/1qiNtMxjCF6WuDLD1SJmSbgvdbArV85er3OLHIZOM4JI"]
-      #conn.execute(f'INSERT INTO "{sheet_url}" VALUES (${i}, ${txt})')
-      #conn.execute(f'INSERT INTO "{sheet_url}" VALUES ("{i}", "{txt}")')
-      conn.execute(f'INSERT INTO "{sheet_url}" VALUES (1, 2)')
-      conn.execute(f'COMMIT')
+      session_state.feedback = session_state.feedback.append({'id': i, 'feedback': txt}, ignore_index=True)
 
       #element = st.dataframe(feedback)
-      data = [[i, txt]]
+      #data = [[i, txt]]
       #df = pd.DataFrame(data, columns=['id', 'feedback'])
       #element.add_rows(df)
       #st.session_state['feedback'] = st.session_state['feedback'].append(data, ignore_index=True)
       #st.dataframe(st.session_state['feedback'])
-      feedback = feedback.append({'id': i, 'feedback': txt}, ignore_index=True)
-      feedback.to_csv("feedback.csv", index=False, header=True)
+      #feedback = feedback.append({'id': i, 'feedback': txt}, ignore_index=True)
+      #feedback.to_csv("feedback.csv", index=False, header=True)
       #st.session_state['feedback'] = st.session_state['feedback'].append(data, ignore_index=True)
       #st.dataframe(st.session_state['feedback'])
       #st.dataframe(st.session_state.feedback)
