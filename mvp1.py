@@ -2,7 +2,7 @@ from sklearn.linear_model import Ridge
 import streamlit as st
 import pandas as pd
 import sklearn_json as skljson
-
+from gsheetsdb import connect
 
 #!pip install lime
 import lime
@@ -103,6 +103,10 @@ if st.button('Show explanation'):
     st.pyplot(explanation.as_pyplot_figure())
     txt = st.text_area('Feedback')
     if st.button('Submit'):
+      conn = connect()
+      sheet_url = st.secrets["https://docs.google.com/spreadsheets/d/1qiNtMxjCF6WuDLD1SJmSbgvdbArV85er3OLHIZOM4JI"]
+      conn.execute(f'INSERT INTO "{sheet_url}" VALUES (i, txt)')
+
       #element = st.dataframe(feedback)
       data = [[i, txt]]
       #df = pd.DataFrame(data, columns=['id', 'feedback'])
