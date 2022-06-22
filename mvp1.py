@@ -34,8 +34,13 @@ explainer1 = lime.lime_tabular.LimeTabularExplainer(np.array(diamonds),
 #Caching the model for faster loading
 @st.cache
 
-def aapredictaa():
-    return 1
+def onAddRow(a, b):
+    data = {
+            'id':a,
+            'feedback':b
+        }
+    st.session_state['feedback'] = st.session_state['feedback'].append(data, ignore_index=True)
+
 
 
 
