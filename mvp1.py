@@ -37,7 +37,7 @@ explainer1 = lime.lime_tabular.LimeTabularExplainer(np.array(diamonds),
 
 
 
-#st.title('Diamond Price Predictor')
+st.title('Diamond Price Predictor')
 #st.image("""https://www.thestreet.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cq_auto:good%2Cw_1200/MTY4NjUwNDYyNTYzNDExNTkx/why-dominion-diamonds-second-trip-to-the-block-may-be-different.png""")
 st.image("handLens.PNG")
 st.header('Explanation setup:')
