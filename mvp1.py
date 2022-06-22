@@ -94,6 +94,7 @@ n = st.number_input('Number of features:', min_value=2, max_value=8, value=2)
 
 i = st.number_input('Instance ID:', min_value=0, max_value=100, value=0)
 
+st.write(feedback)
 
 if st.button('Show explanation'):
     explanation = explainer1.explain_instance(diamonds.iloc[i,:], estimator.predict, num_features=n)
