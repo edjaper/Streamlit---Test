@@ -11,7 +11,7 @@ import numpy as np
 
 
 diamonds = pd.read_csv("diamonds.csv", sep=";", decimal=".")
-
+feedback = pd.read_csv("feedback.csv", sep=";")
 
 #!pip install sklearn-json
 
@@ -103,4 +103,5 @@ if st.button('Show explanation'):
     st.pyplot(explanation.as_pyplot_figure())
     txt = st.text_area('Feedback')
     if st.button('Submit'):
-      
+      element = st.dataframe(feedback)
+      element.add_rows(feedback)
