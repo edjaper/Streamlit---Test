@@ -34,6 +34,10 @@ explainer1 = lime.lime_tabular.LimeTabularExplainer(np.array(diamonds),
 #Caching the model for faster loading
 @st.cache
 
+
+if "feedback" not in st.session_state:
+    st.session_state['feedback'] = pd.DataFrame(columns=['id','feedback'])
+    
 def onAddRow(a, b):
     data = {
             'id':a,
