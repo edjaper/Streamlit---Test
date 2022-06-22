@@ -108,6 +108,7 @@ if st.button('Show explanation'):
       #conn.execute(f'INSERT INTO "{sheet_url}" VALUES (${i}, ${txt})')
       #conn.execute(f'INSERT INTO "{sheet_url}" VALUES ("{i}", "{txt}")')
       conn.execute(f'INSERT INTO "{sheet_url}" VALUES (1, 2)')
+      conn.execute(f'COMMIT')
 
       #element = st.dataframe(feedback)
       data = [[i, txt]]
