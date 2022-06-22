@@ -34,7 +34,7 @@ explainer1 = lime.lime_tabular.LimeTabularExplainer(np.array(diamonds),
 #Caching the model for faster loading
 @st.cache
 
-def predict():
+def aapredictaa():
     return 1
 
 
