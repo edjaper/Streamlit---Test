@@ -105,8 +105,9 @@ if st.button('Show explanation'):
     if st.button('Submit'):
       conn = connect()
       sheet_url = st.secrets["https://docs.google.com/spreadsheets/d/1qiNtMxjCF6WuDLD1SJmSbgvdbArV85er3OLHIZOM4JI"]
-      conn.execute(f'INSERT INTO "{sheet_url}" VALUES (${i}, ${txt})')
+      #conn.execute(f'INSERT INTO "{sheet_url}" VALUES (${i}, ${txt})')
       #conn.execute(f'INSERT INTO "{sheet_url}" VALUES ("{i}", "{txt}")')
+      conn.execute(f'INSERT INTO "{sheet_url}" VALUES (1, 2)')
 
       #element = st.dataframe(feedback)
       data = [[i, txt]]
