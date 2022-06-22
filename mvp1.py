@@ -47,6 +47,9 @@ def onAddRow(a, b):
     st.session_state['feedback'] = st.session_state['feedback'].append(data, ignore_index=True)
 
 
+    
+def convert_df(df):
+   return df.to_csv().encode('utf-8')
 
 
 #st.title('Diamond Price Predictor')
