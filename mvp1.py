@@ -103,14 +103,15 @@ if st.button('Show explanation'):
     txt = st.text_area('Feedback')
     if st.button('Submit'):
       #feedback = feedback.append({'id': i, 'feedback': txt}, ignore_index=True)
-      st.write(feedback)
+      #st.write(feedback)
       #st.session_state.feedback = st.session_state.feedback.append({"id": [i], "feedback": [txt]}, ignore_index=True)
       #st.dataframe(session_state.feedback)
 
-      #element = st.dataframe(feedback)
-      #data = [[i, txt]]
-      #df = pd.DataFrame(data, columns=['id', 'feedback'])
-      #element.add_rows(df)
+      element = st.dataframe(feedback)
+      data = [[i, txt]]
+      df = pd.DataFrame(data, columns=['id', 'feedback'])
+      element.add_rows(df)
+      st.write(element)
       #st.session_state['feedback'] = st.session_state['feedback'].append(data, ignore_index=True)
       #st.dataframe(st.session_state['feedback'])
       #feedback = feedback.append({'id': i, 'feedback': txt}, ignore_index=True)
@@ -120,4 +121,4 @@ if st.button('Show explanation'):
       #st.dataframe(st.session_state.feedback)
       #st.write(feedback)
       
-st.write(feedback)
+#st.write(feedback)
