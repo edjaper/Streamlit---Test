@@ -66,7 +66,7 @@ if st.button('Show explanation'):
     st.pyplot(explanation.as_pyplot_figure())
     txt = st.text_area('Feedback')
     st.button("Submit", on_click = onAddRow(i, txt))
-    st.write(feedback)
+    #st.write(feedback)
     #if st.button('Submit'):
       #feedback = feedback.append({'id': i, 'feedback': txt}, ignore_index=True)
       #st.write(feedback)
