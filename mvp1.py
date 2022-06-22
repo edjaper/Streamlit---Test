@@ -111,5 +111,6 @@ if st.button('Show explanation'):
       #st.dataframe(st.session_state['feedback'])
       #feedback = feedback.append({'id': i, 'feedback': txt}, ignore_index=True)
       st.session_state['feedback'] = st.session_state['feedback'].append(data, ignore_index=True)
-      st.write(feedback)
+      st.dataframe(st.session_state['feedback'])
+      #st.write(feedback)
       
