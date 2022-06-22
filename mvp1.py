@@ -102,3 +102,5 @@ if st.button('Show explanation'):
     #st.success(f'The predicted price of the diamond is ${price[0]:.2f} USD')
     st.pyplot(explanation.as_pyplot_figure())
     txt = st.text_area('Feedback')
+    if st.button('Submit'):
+      
